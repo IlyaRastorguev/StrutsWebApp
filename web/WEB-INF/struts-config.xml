@@ -5,4 +5,7 @@
         "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <struts-config>
+    <form-beans>
+        <form-bean name="startForm" type="strust.web.StartForm"/>
+    </form-beans>
 </struts-config>
