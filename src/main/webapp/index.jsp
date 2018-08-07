@@ -1,3 +1,4 @@
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%--
   Created by IntelliJ IDEA.
   User: 16734683
@@ -8,9 +9,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Struts page</title>
   </head>
   <body>
-  $END$
+  <h2>Test page</h2>
+  <form>
+    <iframe src="ShowSearchBox.do">
+
+    </iframe>
+  </form>
   </body>
 </html>

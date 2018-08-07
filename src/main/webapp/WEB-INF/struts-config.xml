@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="startForm" type="struts.web.StrutsForm"/>
+        <form-bean name="searchBox" type="struts.web.SearchBoxForm"/>
+        <form-bean name="searchResults" type="struts.web.SearchResultsForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/ShowSearchBox" type="struts.actions.ShowSearchBoxAction" name="startForm" validate="false"
+                input="/index.jsp">
+            <forward name="startSearching" path="/WEB-INF/jsp/searchBox.jsp"/>
+        </action>
+        <action path="/GetResults" type="struts.actions.GetSearchResult" name="searchResults">
+            <forward name="showResults" path="/WEB-INF/jsp/searchResults.jsp"/>
+        </action>
+    </action-mappings>
+</struts-config>
