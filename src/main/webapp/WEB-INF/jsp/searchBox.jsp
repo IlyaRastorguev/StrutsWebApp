@@ -12,7 +12,7 @@
 </head>
 <body>
     <form action="GetResults.do">
-        <input id="search_box" placeholder="Enter name of the city" onchange="this.form.submit()">
+        <input id="search_box" placeholder="Enter name of the city" property="inputValue" onchange="this.form.submit()">
     </form>
 </body>
 </html>

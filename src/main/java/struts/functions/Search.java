@@ -2,8 +2,6 @@ package struts.functions;
 
 import struts.data.Data;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by 16734683 on 07.08.2018.
@@ -14,18 +12,15 @@ public class Search {
 
     private final static Data DATA = Data.getInstance();
 
-    private List<String> matchedCities = new ArrayList<>();
-
     public Search(String inputValue) {
         this.inputValue = inputValue;
     }
 
-    public List<String> findMatches() {
+    public void findMatches() {
         for (String city: DATA.getDb()) {
-            if (inputValue.equals(city)) {
-                matchedCities.add(city);
+            if (inputValue.toUpperCase().equals(city)) {
+                DATA.addMatch(city);
             }
         }
-        return matchedCities;
     }
 }

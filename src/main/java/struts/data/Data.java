@@ -19,13 +19,23 @@ public class Data {
 
     private List<String> cities = new ArrayList<>();
 
+    private List<String> matches = new ArrayList<>();
+
     private void add() {
         cities.add("БЕРЛИН");
         cities.add("МОСКВА");
         cities.add("ПАРИЖ");
     }
 
+    public void addMatch(String s) {
+        matches.add(s);
+    }
+
     public List<String> getDb() {
         return cities;
+    }
+
+    public List<String> getMatches() {
+        return matches;
     }
 }
