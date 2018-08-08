@@ -8,16 +8,33 @@
     <form-beans>
         <form-bean name="startForm" type="struts.web.StrutsForm"/>
         <form-bean name="searchBox" type="struts.web.SearchBoxForm"/>
-        <form-bean name="searchResults" type="struts.web.SearchResultsForm"/>
+        <form-bean name="searchResult" type="struts.web.SearchResultsForm"/>
+        <form-bean name="loginForm" type="struts.web.LoginForm"/>
+        <form-bean name="singUpForm" type="struts.web.SingUpForm"/>
     </form-beans>
 
     <action-mappings>
-        <action path="/ShowSearchBox" type="struts.actions.ShowSearchBoxAction" name="startForm" validate="false"
-                input="/index.jsp">
-            <forward name="startSearching" path="/WEB-INF/jsp/searchBox.jsp"/>
+        <action path="/GetLogin" type="struts.actions.ShowLoginAction" name="loginForm" validate="false">
+            <forward name="showLoginForm" path="/WEB-INF/jsp/login.jsp"/>
         </action>
-        <action path="/GetResults" type="struts.actions.GetSearchResult" name="searchResults">
-            <forward name="showResults" path="/WEB-INF/jsp/searchResults.jsp"/>
+        <action path="/GetSingUp" type="struts.actions.ShowSingUpAction" name="singUpForm" validate="false"
+                input="/index.jsp">
+            <forward name="showSingUpForm" path="/WEB-INF/jsp/singUp.jsp"/>
+        </action>
+        <action path="/Login" type="struts.actions.LoginAction" validate="true" name="loginForm">
+            <forward name="successfullyLogin" path="WEB-INF/jsp/startPage.jsp"/>
+            <forward name="hasError" path="WEB-INF/jsp/error.jsp"/>
+        </action>
+        <action path="/SingUp" type="struts.actions.SingUpAction" name="singUpForm" validate="true">
+            <forward name="successfullySingUp" path="WEB-INF/jsp/startPage.jsp"/>
+            <forward name="hasError" path="WEB-INF/jsp/error.jsp"/>
+        </action>
+        <action path="/ShowSearch" type="struts.actions.ShowSearchBoxAction" name="searchBox" validate="false">
+            <forward name="showSearchBox" path="WEB-INF/jsp/searchBox.jsp"/>
+        </action>
+        <action path="/Search" type="struts.actions.GetSearchResult" name="searchBox" validate="false"
+                input="WEB-INF/jsp/searchBox.jsp">
+            <forward name="showSearchResult" path="/WEB-INF/jsp/searchResults.jsp"/>
         </action>
     </action-mappings>
 </struts-config>

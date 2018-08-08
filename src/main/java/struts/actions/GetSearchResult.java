@@ -4,10 +4,13 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import struts.data.Data;
 import struts.functions.Search;
+import struts.web.SearchBoxForm;
+import struts.web.SearchResultsForm;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by 16734683 on 07.08.2018.
@@ -15,19 +18,13 @@ import javax.servlet.ServletResponse;
 public class GetSearchResult extends Action {
 
     @Override
-    public ActionForward execute(ActionMapping mapping, ActionForm form, ServletRequest request, ServletResponse response) throws Exception {
-        Search search = new Search(inputValue);
+    public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Data.getInstance().clear();
+        SearchBoxForm searchBoxForm = (SearchBoxForm) form;
+        Data.getInstance().setInputValue(searchBoxForm.getInputValue());
+        Search search = new Search();
         search.findMatches();
-        return mapping.findForward("showResults");
-    }
-
-    private String inputValue;
-
-    public String getInputValue() {
-        return inputValue;
-    }
-
-    public void setInputValue(String inputValue) {
-        this.inputValue = inputValue;
+        request.setAttribute("resultsList", Data.getInstance().getMatches());
+        return mapping.findForward("showSearchResult");
     }
 }

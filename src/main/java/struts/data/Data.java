@@ -17,14 +17,21 @@ public class Data {
         add();
     }
 
+    private String inputValue;
+
     private List<String> cities = new ArrayList<>();
 
     private List<String> matches = new ArrayList<>();
 
     private void add() {
-        cities.add("БЕРЛИН");
-        cities.add("МОСКВА");
-        cities.add("ПАРИЖ");
+        cities.add("Berlin");
+        cities.add("Moscow");
+        cities.add("Paris");
+    }
+
+    public void clear() {
+        inputValue = "";
+        matches = new ArrayList<>();
     }
 
     public void addMatch(String s) {
@@ -37,5 +44,13 @@ public class Data {
 
     public List<String> getMatches() {
         return matches;
+    }
+
+    public String getInputValue() {
+        return inputValue;
+    }
+
+    public void setInputValue(String inputValue) {
+        this.inputValue = inputValue;
     }
 }

@@ -6,13 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <html>
 <head>
     <title>Search</title>
 </head>
 <body>
-    <form action="GetResults.do">
-        <input id="search_box" placeholder="Enter name of the city" property="inputValue" onchange="this.form.submit()">
+    <form action="Search.do">
+        <html:text property="inputValue" name="searchBox"/>
+        <br/>
+        <input type="submit" value="search">
     </form>
 </body>
 </html>

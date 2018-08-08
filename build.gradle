@@ -27,8 +27,8 @@ dependencies {
 
 war {
     from 'src'
-    webInf { from '/webapp/WEB-INF' }
-    webXml = file('webapp/WEB-INF/web.xml')
+    webInf { from 'src/main/webapp/WEB-INF' }
+    webXml = file('src/main/webapp/WEB-INF/web.xml')
 }
 
 version = "1.0.1 Snap"

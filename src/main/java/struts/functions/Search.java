@@ -8,17 +8,14 @@ import struts.data.Data;
  */
 public class Search {
 
-    private String inputValue;
-
     private final static Data DATA = Data.getInstance();
 
-    public Search(String inputValue) {
-        this.inputValue = inputValue;
+    public Search() {
     }
 
     public void findMatches() {
         for (String city: DATA.getDb()) {
-            if (inputValue.toUpperCase().equals(city)) {
+            if (DATA.getInputValue().toUpperCase().equals(city.toUpperCase())) {
                 DATA.addMatch(city);
             }
         }
