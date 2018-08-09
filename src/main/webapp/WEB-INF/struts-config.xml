@@ -21,7 +21,7 @@
                 input="/index.jsp">
             <forward name="showSingUpForm" path="/WEB-INF/jsp/singUp.jsp"/>
         </action>
-        <action path="/Login" type="struts.actions.LoginAction" validate="true" name="loginForm">
+        <action path="/Login" type="struts.actions.LoginAction" validate="true" name="loginForm" input="/WEB-INF/jsp/login.jsp">
             <forward name="successfullyLogin" path="WEB-INF/jsp/startPage.jsp"/>
             <forward name="hasError" path="WEB-INF/jsp/error.jsp"/>
         </action>

@@ -6,6 +6,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import struts.data.Data;
 import struts.functions.Search;
+import struts.web.LoginForm;
 import struts.web.SearchBoxForm;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ public class ShowSearchBoxAction extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LoginForm loginForm = (LoginForm) form;
+        
         return mapping.findForward("startSearching");
     }
 }

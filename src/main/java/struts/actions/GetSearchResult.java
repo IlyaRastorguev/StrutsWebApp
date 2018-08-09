@@ -7,7 +7,6 @@ import org.apache.struts.action.ActionMapping;
 import struts.data.Data;
 import struts.functions.Search;
 import struts.web.SearchBoxForm;
-import struts.web.SearchResultsForm;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
