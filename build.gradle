@@ -23,7 +23,7 @@ dependencies {
     compile group: 'org.apache.struts', name: 'struts-core', version: '1.3.10'
     compile group: 'org.apache.struts', name: 'struts-tiles', version: '1.3.10'
     compile group: 'org.apache.struts', name: 'struts-taglib', version: '1.3.10'
-    compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.0.1.Final'
+    providedCompile 'org.hibernate:hibernate-core:5.3.4.Final'
 }
 
 war {

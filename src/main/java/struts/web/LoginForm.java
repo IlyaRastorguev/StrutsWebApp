@@ -9,7 +9,7 @@ import org.apache.struts.action.ActionMessage;
 
 public class LoginForm extends ActionForm {
 
-    private static final Long SerialVersionUID = 2L;
+    private static final Long serialVersionUID = 2L;
 
     private static final String PASSWORD_REGEXP = "([a-zA-Z]{8,})([0-9]{2,})";
 
